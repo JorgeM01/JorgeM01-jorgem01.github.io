@@ -8,10 +8,39 @@
 <!--Lo del body es todo lo visible por el user.-->
 <body>
 
-<!--Nesting tags. Solo recordar cerrarlos.-->
-<p></p>
-Esto ya es parte del body!!
+    <!--Basicamente div es para un texto/bloque entero, mientras
+    que span se puede usar para pequeñas partes en específico,
+    como hasta palabras. Es como para hacer la división ya sea
+    de textos o pocas palabras.
 
+    OJO: Dentro del SPAN NO pueden ir divs PERO dentro del DIV SÍ pueden
+    ir SPANS.
+
+    -->
+    <div>*** DIV 1: Some content here ***</div>
+    <div>*** DIV 2: Following right after div 2 ***</div>
+    <span>*** SPAN 1: Following right after div 2 ****</span> -> No es span ni div.
+    <div>
+        *** DIV 3: Following right ater span 1.
+        <span>*** SPAN 2: INSIDE div 3 ***</span>
+        <div>Div adentro de otro div. <span> hola</span></div>
+        Continue content of div 3 ***
+
+        <span>Span linea 1
+        Span linea 2
+        Span linea 3
+        </span>
+        <a href="...">HTML, CSS and JS for Web Developers</a> <!--Es para poner direcciones/links. Dentro de los "..." iría el link.-->
+
+    </div>
+
+
+<!--Nesting tags. Solo recordar cerrarlos.
+<p>Probando 12345</p>
+<p></p>
+<p>abc123</p>
+Esto ya es parte del body!!!!
+-->
 
 </body>
 </html>
