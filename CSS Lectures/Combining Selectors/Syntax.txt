@@ -1,0 +1,102 @@
+======================================
+Combinación: ELEMENT WITH CLASS SELECTOR.
+p.big{
+    font-size: 20px;
+}
+
+Después afectaría en el archivo HTML a:
+<p class="big">...</p>
+<div class="big">...</div>
+
+-> Solamente al primero afectaría.
+
+Se suele usar para cuando tenemos una clase
+que se aplica a diferentes elementos pero 
+por ejemplo a una en particular queremos aplicarle
+algo ligeramente diferente, entonces hacemos eso.
+======================================
+
+Combinación: CHILD SELECTOR
+Selector con selector básicamente.
+Se lee de derecha a izquierda:
+Every p that is a direct child of article.
+
+article > p {
+    color: blue;
+}
+
+Example:
+
+CSS: 
+article > p {
+    color: blue;
+}
+
+HTML:
+<article>...
+    <p>...BLUE...</p>   ----> SOLO AQUÍ. Recordar el order "jerárquico."
+</article>
+<p>...</p>
+<article>...
+<div><p>...</p></div>
+</article>
+
+
+
+======================================
+
+Combinación: DESCENTANT SELECTOR
+
+syntax:
+
+selector1 selector2 {
+    color: blue;
+}
+
+Sería como:
+Every p that is inside (at any level) of article.
+O sea que aunque no sea el child directo, siempre aplicará.
+
+article p {
+    color: blue;
+}
+
+
+======================================
+
+Sin embargo, hay que recordar que
+para todo esto, puede aplicar para otros tipos como:
+
+.colored p {
+    color: blue;
+}
+Every p that is inside (at any level) an
+element with class="colored.
+
+
+article > .colored {
+    color: blue;
+}
+Every element with class="colored" that is a 
+direct child of article element.
+
+
+div > div > p {
+  color: blue;
+}
+TAMBIÉN pueden darse estos casos!
+
+
+
+OJO OJO
+Uno puede tener más clases para un elemento.
+Solo hay que separarlo por espacios.
+
+Ejemplo:
+
+<p class="clase1 clase2">
+
+
+======
+-> Hay otras combinaciones que combinaciones
+que casi no se usan pero que igual existen.

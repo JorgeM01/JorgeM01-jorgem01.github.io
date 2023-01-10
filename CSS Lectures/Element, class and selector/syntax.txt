@@ -1,0 +1,75 @@
+=====================================
+
+p -> sería el element selector.
+
+p {
+    color: blue;
+}
+
+
+=====================================
+
+.blue -> sería el class selector.
+
+.blue {
+    color: blue;
+}
+
+Aquí básicamente estamos creando una clase
+de CSS llamada blue que después hacia donde
+apunte coloreará de azul.
+
+Por lo tanto, si nosotros queremos tener esta clase,
+tenemos que ir a modificar el archivo html para 
+cuando toque agregar una clase que queramos.
+
+Por ejemplo (html):
+
+<p class="blue">...</p>
+<p>...</p>
+<div class="blue">...</div>
+
+Entonces los "..." tendrían el formato
+de la clase blue. Menos el del medio 
+que no le puse clase.
+
+
+=====================================
+
+#name -> sería el id Selector.
+Entonces name sería el nombre de algún id de
+nuestro documento de HTML.
+
+#name {
+    color: blue;
+}
+
+Ejemplo:
+
+CSS: 
+#name {
+    color: blue;
+}
+
+HTML:
+...
+<p>...</p>
+<div id="name">...</div>
+...
+
+Entonces el formato que nosotros creemos en el CSS
+se irá al formato del HTML.
+
+
+=====================================
+
+Grouping selectors.
+
+CSS: 
+div, .blue {
+    color: blue;
+}
+
+Básicamente es para establecer dos
+a la vez. Sería lo mismo, solo hay que saber
+que se separan con comas.

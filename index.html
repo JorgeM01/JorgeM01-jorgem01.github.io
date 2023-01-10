@@ -2,23 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Main page</title>
+    <title>Element with Class Selector</title>
+    <style>
+      div > div > p {
+        color: rgb(243, 94, 8);
+      }
+    </style>
   </head>
   <body>
-    <h1 id="top">External Links</h1>
-    <section>
-      <p>
-        Link test
-        <!-- link to Facebook page WITH TARGET
-        TARGET sirve para que abra el link en una nueva pestaña y siempre 
-        se mantenga abierta la que ya teníamos.-->
-        <a
-          href="https://www.youtube.com/watch?v=7okFSZDfZZ4"
-          target="_blank"
-          title="Click!"
-          >Click here
-        </a>
-      </p>
-    </section>
+    <div>
+      <p>Does not applied.</p>
+      <div>
+        <p>I am feeling blue</p>
+        <p>I am feeling blue</p>
+        <div class="makeMeBlue">
+          <article>hola</article>
+          <p>I am feeling blue!</p>
+          <p>This is blue too.</p>
+        </div>
+        <p>abc</p>
+        <article>dentro de article</article>
+        <p>123</p>
+      </div>
+      <section class="makeMeBlue">
+        <p>I just want to be left alone!</p>
+      </section>
+    </div>
   </body>
 </html>
+
+<!--Básicamente después el segundo div se vuelve en el primer div para el tercer div, y es como
+que se podría seguir haciendo eso infinitamente o eso es lo que entiendo.-->
