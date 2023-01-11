@@ -1,0 +1,11 @@
+Estos son los que básciamente se usan cuando para diferentes interacciones,
+por ejemplo cuando el usuario pasa el mouse sobre algo, que cambie de color
+y cosas así...
+
+Existen muchos, pero los que se verán en esta lectura serán:
+
+:link
+:visited
+:hover
+:active
+:nth-child(...)

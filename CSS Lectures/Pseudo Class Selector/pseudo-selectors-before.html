@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pseudo Class Selectors</title>
+    <style>
+      /* Styles go here. */
+      header li {
+        list-style: none;
+      }
+
+      a:link,
+      a:visited {
+        text-decoration: none;
+        background-color: green;
+        border: 1px solid blue;
+        color: black;
+        /*Esto es porque <a> es tipo bloque y línea, entonces
+          si no se hace nada, está en default en bloque, entonces lo
+          vamos a pasar a bloque aquí.*/
+        display: block;
+        width: 200px;
+        text-align: center;
+        margin-bottom: 1px;
+      }
+
+      /*Estos seríá los seudo selectors para cuando
+      se interactúe con <a>.
+        
+      En este caso y en el anterior de link y visited, 
+      no hicimos dos cosas diferentes para cada acción, 
+      sino que queríamos que estuvieran juntas y por eso
+      se está hacienod de esta forma.*/
+
+      /*Al pasar sobre él.*/
+      a:hover,
+      /*Al darle click*/
+      a:active {
+        background-color: red;
+        /*
+        Color de la fuente.
+        */
+        color: yellow;
+      }
+
+      /*Usando una de las funciones de
+      nth-child.
+      En este caso para especificar que
+      queremos modificar SOLO al tercero
+      de la lista.*/
+      header li:nth-child(3) {
+        font-size: 24px;
+      }
+
+      /*Modificando un div dentro de una 
+      section
+      
+      Se usó el nth-child para modificar
+      a todos los hijos impares nada más.
+      */
+      section div:nth-child(odd) {
+        background-color: gray;
+      }
+
+      /*Para modificar al hijo 4
+      cada vez que se pase por encima
+      de él.
+      */
+      section div:nth-child(4):hover {
+        background-color: green;
+        /*Modificamos el mouse -> cursor*/
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pseudo Class Selectors</h1>
+
+    <header>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="http://goo.gl/V0Wl6s" target="_blank">AngularJS Course</a>
+        </li>
+        <li>
+          <a href="http://www.facebook.com/CourseraWebDev" target="_blank"
+            >Facebook Fan Page</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <section>
+      <div>DIV 1</div>
+      <div>DIV 2</div>
+      <div>DIV 3</div>
+      <div>DIV 4</div>
+      <div>DIV 5</div>
+      <div>DIV 6</div>
+      <div>DIV 7</div>
+      <div>DIV 8</div>
+      <div>DIV 9</div>
+      <div>DIV 10</div>
+      <div>DIV 11</div>
+      <div>DIV 12</div>
+      <div>DIV 13</div>
+      <div>DIV 14</div>
+      <div>DIV 15</div>
+      <div>DIV 16</div>
+      <div>DIV 17</div>
+      <div>DIV 18</div>
+      <div>DIV 19</div>
+      <div>DIV 20</div>
+    </section>
+  </body>
+</html>
