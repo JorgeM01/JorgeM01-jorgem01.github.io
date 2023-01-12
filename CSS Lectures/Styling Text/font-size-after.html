@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Setting Font Size</title>
+    <style>
+      body {
+        font-size: 120%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Regular text</div>
+    <!--Se están poniendo aquí directamente los estilos porque
+    se están probando nada más, pero recordar que no es una buena
+    práctica. -->
+
+    <!--Esto es el tamaño relativo.
+    Básicamente toma la fuente y sin importar
+    cuál era el valor que tenía (en este caso es 120%)
+    pero aun si no hubieramos puesto el 120, estamos indicando
+    que queremos duplicar ese tamaño.
+  
+  A pesar de ya haber definido antes el tamaño, este tipo o sea el
+  em funciona como un acumulador donde toma en cuenta lo establecido
+  anteriormente.
+  -->
+
+    <!--También podríamosp oner aquí font-size: 200% que sería
+  el equivalente.-->
+    <div style="font-size: 2em">
+      2em text
+      <!--Como es acumulador y queremos 4em, solo
+      habría que poner 2em porque ya tenía el 2em de antes.-->
+      <div style="font-size: 2em">
+        4em text
+        <!--Así podemos volver al tamaño que tenía anteriormente.-->
+        <div style="font-size: 0.5em">2em again!</div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--Todo eso funciona similarmente al Zoom de los navegadores.
+Al final si hacemos zoom, todo aumenta de forma relativa, siempre
+se mantienen las semejanzas.-->
+
+<!--Entonces recordar:
+****Pixels or (%): absolute units of measurement.
+****2em: relative unit of measurement.-->

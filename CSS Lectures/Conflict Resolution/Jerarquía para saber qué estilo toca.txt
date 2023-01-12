@@ -1,0 +1,44 @@
+Origen:
+Entre origen y merge, the last declaration
+wins.
+Entonces tenemos que revisar el archivo HTML
+para ver cuál fue el último estilo declarado
+para saber que a ese se le dará prioridad.
+
+
+Merge:
+Puede también que se den los casos
+donde dos declaraciones tengan el mismo target
+pero para diferentes aspectos, entonces se pueden
+combinar perfectamente.
+Ejemplo: font y color, no pasa nada. Se fucionan.
+
+
+Inheritance:
+Esto pues es como lo que ya sabemos,
+por ejemplo si especificamos una propiedad
+para el body, todos los hijos del body tendrán
+esa propiedad.
+
+
+Specificity:
+Most specific selector combination wins.
+Significa entonces que la combinación de selectores
+más específica gana.
+
+Así sería el orden de especificadad:
+1. style="..." -> Cuando el style se usa justo en la declaración del elemento.
+2. ID
+3. Class, pseudo-class, attribute.
+4. # of Elements.
+
+Al final sería una puntación.
+Vamos puntuando de arriba hacia abajo,
+o sea del 1 al 4 formando un número algo así:
+1000.
+En ese caso, sería que se aplicó nada más el 1,
+por lo que tendría una puntación muy alta y se aplicaría
+ese estilo.
+
+
+

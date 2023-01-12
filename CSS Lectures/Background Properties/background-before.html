@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Background</title>
+    <style>
+      body {
+        background-color: gray;
+      }
+
+      #bg {
+        width: 500px;
+        height: 500px;
+        background-color: blue;
+        background-image: url("yaakov.png");
+        /*Así aparece solo una vez la imagen. Podemos decidir.*/
+        background-repeat: no-repeat;
+        /*Podemos decidir en qué lado aparecerá. Podemos hacer combinaciones
+        o también poner nada más right o cosas así.*/
+        background-position: bottom right;
+      }
+
+      /*Demostrando cómo se puede hacer todo en una sola línea (lo del background).*/
+      #bg2 {
+        margin-top: 50px;
+        width: 500px;
+        height: 500px;
+        /*Al usar background elimina todas las propiedades que ya habíamos puesto en el background,
+        por esa razón tuve que poner aquí el azul, de otra forma no aparecería.*/
+        background: url("yaakov.png") no-repeat bottom right blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Background Property</h1>
+
+    <div id="bg">Background properties are fun!</div>
+    <div id="bg2">Background all into one.</div>
+  </body>
+</html>

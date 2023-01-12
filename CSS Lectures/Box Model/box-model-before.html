@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>The Box Model</title>
+    <style>
+      /*
+      Esto sirve para aplicar cualquier propiedad que pongamos
+      aquí a todos los elementos de nuestro HTML.
+
+      Es como si significa que seleccione cada uno de los elementos,
+      no exactamente que herede. Así es como funciona *.
+      */
+      * {
+        /*Se puso aquí ya que esta propiedad aunque la pongamos
+        en el body, no es hereditaria. Recordar que esta
+        es la que es recomendable usar siempre ya que ayuda por ejemplo
+        a que si establecemos un width, si será del tamaño que nosotros
+        hayamos seleccionado.*/
+        box-sizing: border-box;
+
+        /*Estos al igual que lo otro, los browser lo tiene por default
+        para ciertos elementos así como h1, entonces si ponemos esto
+        en el body, ganará por specification o algo así el del browser,
+        mientras que si lo ponemos aquí sí irá al elemento directamente.*/
+        margin: 0;
+        padding: 0;
+
+        /*No es necesario hacer esto siempre pero si nosotros SÍ queremos
+        resetear a la configuración inicial y no por default del navegador,
+        podemos hacer esto.*/
+      }
+
+      body {
+        /*De esta forma hacemos que no afecte
+        lo que haga por default el navegador. En este
+        caso quitamos lo que evita que cubra la caja todo
+        el width.*/
+        background-color: gray;
+      }
+
+      #box {
+        background-color: blue;
+        /*Un shortcut sería poner solo 10px. Lo que puse
+        representa la cantidad de pixeles para cada lado.*/
+        /*Arriba, derecha, abajo, izquierda.*/
+        padding: 10px 10px 10px 10px;
+        border: 5px solid black;
+        /*margin: 40px;*/ /*Sería 40px a los 4 lados.*/
+        /*Creando un margin top. Este
+        colapsará porque es menor que el margin de h1 ya
+        que tiene un margin de 30.*/
+        margin-top: 20px;
+
+        /*El width final sería la suma de cada uno, en
+        realidad no sería solo 300. Sino que sería 300+10+10+5+5 por lo otro que
+        ya habíamos agregado. Las dev tools ayudan a ver mejor
+        eso.*/
+        width: 300px;
+        height: 50px;
+
+        /*Debido a que también establecimos un height y el
+        contenido del box es demasiado largo, éste se correrá
+        y puede hacer un merge con lo que esté abajo, entonces
+        podemos agregar un overflow que tiene diferentes opciones
+        que permite que esto tenga una solución.
+
+        Por ejemplo el auto sirve para que haya un scrollbar SOLO cuando
+        sea necesario. También está la opción de scroll bar para que siempre
+        esté independientemente de si es necesario o no.
+        
+        A pesar que es una buena solución, a la mayoría de las personas no les gusta
+        ver una doble barra, una del navegador y otra en el interior, entonces es bueno
+        usarlo solo para ciertas cosas como términos de condiciones y eso. Aunque si no
+        hay de otra, pues usarlo porque al final es una solución.
+        */
+        overflow: auto;
+
+        /*Sin embargo, si ponemos lo siguiente
+        SÍ GARANTIZA que será del width que nosotros
+        hayamos puesto.
+
+        Siempre es recomendable usarlo.
+        Sin embargo lo puse en un lugar donde una vez
+        se ponga allí, no será necesario ponerlo nunca
+        más a cada componente.
+
+        box-sizing: border-box;
+        */
+
+        /*
+        Esta sería la opción por default.
+
+        box-sizing: content-box;
+        */
+      }
+      #content {
+        background-color: #90ee90; /*green*/
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Box Model</h1>
+
+    <div id="box">
+      <!--Esto sería background azul si quito el comment-->
+      <div id="content">
+        Honduras, oficialmente República de Honduras, es un país de América
+        Central con costas en el mar Caribe al norte y en el océano Pacífico al
+        sur.12​ Honduras es un estado unitario y se autodefine como libre,
+        soberano e independiente. Limita al norte y este con el mar Caribe, al
+        sureste con Nicaragua, al sur con el golfo de Fonseca y El Salvador, y
+        al oeste con Guatemala,
+      </div>
+    </div>
+  </body>
+</html>

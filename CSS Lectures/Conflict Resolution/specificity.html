@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Inheritance in CSS</title>
+    <style>
+      /*Tendría puntación 0012*/
+      header.navigation p {
+        color: blue;
+      }
+      /*Tendría puntación 0011*/
+      p.blurb {
+        color: red;
+      }
+      /*Tiene puntación de 0001
+      pero como tiene el !important,
+      se toma como principal.
+      
+      Sin embargo, no es recomendable utilizarlo
+      porque eso de estar overriding hará que sea más
+      difícil su mantenimiento.*/
+      p {
+        color: green !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navigation">
+      <p class="blurb">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero soluta
+        enim aut! Nihil nam obcaecati, fugiat sint sit libero voluptate eos
+        incidunt odio neque cum, dignissimos aperiam, magnam nisi debitis.
+      </p>
+    </header>
+  </body>
+</html>
