@@ -1,0 +1,8 @@
+============================================================
+
+Básicamente el grid se hace con 12 columnas las cuales luego
+pueden dividirse en pequeñas partes como 3-3-3-3, 4-4-4 y así...
+
+También digamos si lo dividimos en 2 y 2, o sea el 50% y 50%,
+ese 50% se puede descomponer en otros 12. Sería un 
+grid anidado.

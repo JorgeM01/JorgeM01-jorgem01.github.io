@@ -1,0 +1,47 @@
+========================================================
+Sintaxis:
+    //Media feature (resolves to true or false).
+@media (max-width: 767px) {
+    p {
+        color: blue;
+    }
+}
+
+If TRUE styles within curly braces, apply.
+
+
+========================================================
+
+Media Query Common Features
+
+@media (max-width: 800px) {...}
+
+@media (min-width: 800px) {...}
+
+@media (orientation: portrait) {...}
+
+@media screen {...}
+
+@media print {...}
+
+
+Generalmente las primeras dos son las más comunes.
+
+
+========================================================
+
+Se pueden usar operadores lógicos como and.
+
+@media (min-width: 768px) and (max-width: 991px) {...}
+
+Para el OR sería con ",".
+
+@media (min-width: 768px) , (max-width: 991px) {...}
+
+Hay que tener cuidado que si ya pusimos por ejemplo 2000,
+no podemos repetir 2000, sino que sería 1999 por ejemplo.
+
+========================================================
+
+Breakpoints sería cada vez que cambian.
+O sea entre 1199 y 2000 sería un breakpoint y así.
