@@ -1,0 +1,91 @@
+=============================================================
+Static Positioning
+-Es como el normal document flow. Default for all, except html.
+
+Un elemento con posicionamiento estático se coloca en el flujo
+normal del documento y no se puede mover mediante
+las propiedades "top", "right", "bottom" y "left".
+
+=============================================================
+
+Relative Positioning
+
+Es similar al estáico, pero permite mover un elemento en relación
+a su posición normal en el flujo del documento mediante las propiedades
+"top", "right", "bottom" y "left".
+
+Por ejemplo si se establece top: 10px para un elemento con posicionamiento
+relativo, se moverá hacia abajo 10 pixels desde su posición original 
+en el flujo del documento.
+
+=============================================================
+
+Aquí hay que recordar que a pesar de que se puedan mover de esa 
+forma, su posición original en el document flow será la misma,
+solo que dentro de ese espacio que tiene el elemento, se podrá
+mover básicamente.
+
+
+
+=============================================================
+
+Ejemplo:
+
+p{
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+Recordar que aunque pusimos top, siginifica que bajará
+porque habrán 50 pixeles "menos" hacia arriba o algo así
+se puede interpretar.
+
+Ejemplo 2:
+
+p{
+    position: relative;
+    bottom: -50px;
+    right: -50px;
+}
+
+También se pueden poner en negativo y en este 
+caso al ser contrarios a los que pusimos arriba,
+quedarían igual. Solo es de analizar los pixeles
+y hacia dónde estará su dirección para comprender mejor.
+
+
+=============================================================
+
+Absolute Positioning
+
+En "Absolute positioning" un elemento es retirado del flujo normal del documento y se
+posiciona en relación a un ancestro cercano que tenga una posición diferente de static, 
+este elemento se posiciona en relación a un ancestro cercano que tenga una posición diferente de static.
+
+Al utilizar la posición absoluta, las propiedades "top", "right", "bottom" y "left" se 
+utilizan para posicionar el elemento en relación al borde del ancestro más cercano con 
+posicionamiento no estático. Si no hay ningún ancestro con posicionamiento no estático,
+el elemento se posicionará en relación al borde del viewport (es decir, la ventana del navegador).
+
+Los elementos con posicionamiento absoluto no tienen efecto alguno en los elementos circundantes
+y no ocupan espacio en el diseño, es decir, los elementos siguen colocándose como si el elemento 
+con posicionamiento absoluto no existiera.
+
+En resumen, el absolute positioning es una forma de posicionar un elemento en relación a un
+ancestro cercano con una posición diferente de static, y además no tiene efecto en los elementos
+circundantes y no ocupa espacio en el diseño.
+
+Por default, html is the only element that has non-static
+positioning set on it (relative).
+
+Sintaxis
+
+Por ejemplo: 
+
+#p1 {
+    position: absolute;
+}
+
+Este elemento con id p1 dejaría de formar parte del document flow, es como si sería totalmente
+ignorado.

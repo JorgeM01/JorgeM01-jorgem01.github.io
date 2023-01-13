@@ -1,0 +1,13 @@
+Básicamente lo que hace el float es mover hacia un costado
+al elemento y lo saca del flujo principal.
+
+Estos elementos con float sus márgenes NUNCA colapsan
+como lo harían de forma vertical.
+
+Entonces si hacemos a un elemento float, ese elemento es 
+como si se saliera de donde estaba, por ejemplo de un div.
+
+Para reparar eso hay que usar el clear.
+
+Entonces: to resume normal document flow, use the 
+clear property.

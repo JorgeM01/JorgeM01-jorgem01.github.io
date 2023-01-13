@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Positioning Elements</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        position: relative;
+      }
+
+      div#container {
+        background-color: #00ffff;
+      }
+
+      div#absoluteTest {
+        /*Vemos cómo busca al relative ancestro
+        más cercano el p3 para poder funcionar correctamente.
+        
+        Si no hubiera ningún ancestro con relative, se iría
+        hasta el elemento html porque recordemos que es el
+        único que por default es relative.*/
+
+        background-color: yellow;
+        height: 800px;
+        position: relative;
+        top: 100px; /*AL tratarse de relativo, podemos
+        mover a todos los elementos dentro de él al mismo tiempo.*/
+      }
+
+      p {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        margin-bottom: 15px;
+      }
+      #p1 {
+        background-color: #a52a2a;
+
+        /*A pesar de haberlo movido, el elemento es como si siguiera
+        en el lugar que ya estaba, pero lo vemos en otro lado.
+        En otras palabras, no altera el flujo.*/
+        position: relative;
+        top: 65px;
+        left: 65px;
+      }
+      #p2 {
+        background-color: #deb887;
+      }
+      #p3 {
+        background-color: #5f9ea0;
+        /*Recordar que los elementos absolutos se ignoran totalmente del flujo.*/
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #p4 {
+        background-color: #ff7f50;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Positioning Elements</h1>
+    <h2>Absolute test</h2>
+    <div id="absoluteTest">
+      Hola!
+      <div id="container">
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+      </div>
+    </div>
+  </body>
+</html>
