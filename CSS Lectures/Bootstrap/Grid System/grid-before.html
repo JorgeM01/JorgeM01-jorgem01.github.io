@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Starter Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!--Nos dará 3 columnas across en col-md-4.
+        debido a que sería 4/12 = 3.
+      
+        Mientras que para sm tendríamos 12/6 = 2 columnas.
+        -->
+        <div class="col-md-4 col-sm-6">Col 1</div>
+        <div class="col-md-4 col-sm-6">Col 2</div>
+        <div class="col-md-4 col-sm-6">Col 3</div>
+      </div>
+
+      <!--Recordar que se puso un margin bottom, por esa razón hay un espacio
+      entre ambos row. Eso para poder ver más claramente el ejemplo.-->
+      <!--Así separamos visualmente al row 1 del row 2.-->
+      <div class="row">
+        <div class="col-md-4 col-sm-6">Col 1</div>
+        <div class="col-md-4 col-sm-6">Col 2</div>
+        <div class="col-md-4 col-sm-6">Col 3</div>
+      </div>
+
+      <!--Para probar los que son de tamaño xs que SIEMPRE serán horizontales.
+      Ver eso en la documentación de grid de Bootstrap.
+      En otras palabras, usando esto, es como si fuera con un diseño fijo que independientemente
+      de qué tan grande o pequeño sea, obviamente hablando de pantallas pequeñas, se mantendrá igual
+      el diseño.-->
+      <div class="row">
+        <div class="col-xs-6">Col 1</div>
+        <div class="col-xs-6">Col 2</div>
+        <div class="col-xs-6">Col 3</div>
+      </div>
+    </div>
+
+    <!-- jQuery (Bootstrap JS plugins depend on it) -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
+<!--Entonces recordar:
+-La cuadricula debe estar dentro de la container/container-fluid class.
+-Todas las columnas deben estar adentro de la row class.
+-If no other rules apply, specifying col-xs... will keep that layout no matter
+what the size of the screen.
+-->

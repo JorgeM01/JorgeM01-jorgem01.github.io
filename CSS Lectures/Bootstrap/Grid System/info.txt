@@ -1,0 +1,40 @@
+======================================================
+
+ESTRUCTURA:
+
+//Must be inside container (or container-fluid).
+<div class="container">
+    //Creates horizontal groups of columns and applies negative left/right margins.
+    <div class="row">
+
+        //col-SIZE-SPAN
+
+        //Size: Screen width range indetifier (así como 1200 pixeles, etc.).
+        //Significa que las columnas will collapse (stack) below that width.
+        //Si la pantalla no tiene ese width, simplemente la clase no se aplicará.
+        <div class="col-md-4">Col 1</div>
+
+        //Span: sería how many columns the element should span.
+        //Values from 1 through 12.
+
+        //Si se escogen valores arriba del 12, se irán a la siguiente
+        //fila y ese proceso podrá repetirse las veces que pase..
+        ...
+    </div>
+</div>
+
+En vez de div podría ser también
+<header class="container"> 
+    <nav class="row">
+...
+...
+
+Y así con cualquiera. Al final es lo que tenga sentido
+para nosotros.
+
+
+===========================================================
+
+Recordar:
+EVERY GRID SYSTEM que hagamos, tiene que estar dentro de class container.
+O container-fluid que nos da un padding on the side.
