@@ -16,7 +16,7 @@
   p {
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid black;
-    padding: 5%;
+    padding: 45px;
     padding-top: 11%;
     background-color: gray;
     width: 80%;
@@ -52,6 +52,10 @@
   /* Simple Responsive Framework. */
   .row {
     width: 100%;
+  }
+
+  .col-md-12.edit p{
+      padding-top: 45px;
   }
 
   /********** Large devices only **********/
