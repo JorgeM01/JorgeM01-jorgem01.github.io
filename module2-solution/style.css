@@ -23,6 +23,18 @@
     margin-left: auto;
   }
 
+  .title1{
+    background-color: pink;
+    width:40%; 
+    border: 2px solid black; 
+    border-top: 1px solid black;
+    border-right: none;
+    position: absolute;
+    text-align: center;
+    top: -10.5%;
+    right: 10.5%;
+  }
+
   /* Simple Responsive Framework. */
   .row {
     width: 100%;
@@ -141,20 +153,7 @@
   div{
     background-color: yellow;
   }
-
   
-  .title1{
-    background-color: pink;
-    width:150px; 
-    border: 2px solid black; 
-    border-top: 1px solid black;
-    border-right: none;
-    position: absolute;
-    top: 52px;
-    left: 251px;
-    text-align: center;
-  }
-
   section{
     position: relative;
     background-color: blue;
