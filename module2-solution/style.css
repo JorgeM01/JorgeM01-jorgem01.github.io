@@ -16,23 +16,34 @@
   p {
     border: 2px solid black;
     padding: 5%;
-    padding-top: 10%;
+    padding-top: 11%;
     background-color: gray;
     width: 80%;
     margin-right: auto;
     margin-left: auto;
   }
 
-  .title1{
-    background-color: pink;
+  .titles{
     width:40%; 
     border: 2px solid black; 
-    border-top: 1px solid black;
-    border-right: none;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
     position: absolute;
     text-align: center;
-    top: -10.5%;
+    top: -10%;
     right: 10.5%;
+  }
+
+  .title1{
+    background-color: pink;
+  }
+
+  .title2 {
+    background-color: rgb(185, 56, 56);
+  }
+
+  .title3{
+    background-color: rgb(208, 231, 154);
   }
 
   /* Simple Responsive Framework. */
@@ -55,7 +66,7 @@
     .col-lg-11,
     .col-lg-12 {
       float: left;
-      border: 1px solid green;
+      /*border: 1px solid green; */
     }
     .col-lg-1 {
       width: 8.33%;
@@ -110,7 +121,7 @@
     .col-md-11,
     .col-md-12 {
       float: left;
-      border: 1px solid green;
+      /*border: 1px solid green;*/
     }
     .col-md-1 {
       width: 8.33%;
@@ -151,10 +162,10 @@
   }
 
   div{
-    background-color: yellow;
+    /*background-color: yellow;*/
   }
   
   section{
     position: relative;
-    background-color: blue;
+    /*background-color: blue;*/
   }
