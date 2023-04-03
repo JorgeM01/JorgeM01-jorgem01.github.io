@@ -10,7 +10,7 @@ las propiedades "top", "right", "bottom" y "left".
 
 Relative Positioning
 
-Es similar al estáico, pero permite mover un elemento en relación
+Es similar al estático, pero permite mover un elemento en relación
 a su posición normal en el flujo del documento mediante las propiedades
 "top", "right", "bottom" y "left".
 
