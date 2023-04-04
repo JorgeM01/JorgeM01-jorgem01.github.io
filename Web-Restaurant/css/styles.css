@@ -98,3 +98,47 @@ body{
     pequeña.*/
     margin-top: -30px;
 }
+
+
+/*Son las mismas medidas de Bootstrap.*/
+
+/**** LARGE DEVICES ONLY ****/
+@media (min-width: 1200px){
+
+}
+
+/**** MEDIUM DEVICES ONLY ****/
+@media (min-width: 992px) and (max-width: 1199px){
+    #logo-img {
+        background: url('../images/restaurant-logo_medium.png') no-repeat;
+        width: 100px;
+        height: 100px;
+        margin: 5px 5px 5px 0;
+    }
+}
+
+/**** SMALL DEVICES ONLY ****/
+@media (min-width: 768px) and (max-width: 991px){
+
+}
+
+/**** EXTRA SMALL DEVICES ONLY ****/
+@media (max-width: 767px){
+    /* Header */
+    .navbar-brand{
+        padding-top: 10px;
+        height: 80px;
+    }
+    .navbar-brand h1 {
+        padding-top: 10px;
+        /*Es como un responsive font-size que se suele usar. O sea esa unidad.*/
+        font-size: 5vw; /* 1vw = 1% of viewport width. */
+    }
+    .navbar-brand p {
+        font-size: .6em;
+        margin-top: 12px;
+    }
+    .navbar-brand p img {
+        height: 20px;
+    }
+}
