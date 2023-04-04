@@ -96,5 +96,5 @@ body{
     /*Para pantallas más pequeñas. Así hacemos más pequeña la barra
     y también la fuente, así no se va a ver tan grande en una pantalla
     pequeña.*/
-    margin-top: -30x;
+    margin-top: -30px;
 }
