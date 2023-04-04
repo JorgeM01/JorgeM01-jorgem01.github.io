@@ -19,7 +19,7 @@ body{
     margin: 10px 15px 10px 0;
 }
 
-.navbar-brand{
+.navbar-brand { 
     padding-top: 25px;
 }
 
@@ -99,7 +99,6 @@ body{
     margin-top: -30px;
 }
 
-
 /*Son las mismas medidas de Bootstrap.*/
 
 /**** LARGE DEVICES ONLY ****/
@@ -141,4 +140,18 @@ body{
     .navbar-brand p img {
         height: 20px;
     }
+
+    /* Collapsed nav menu glyph. */
+    /* Cuando decimos que es 1.2em es porque va a multiplicar
+    digamos si eran 60px, pues quedaría con 19 * 1.2 = x valor nuevo.*/
+    #collapsable-nav a {
+        font-size: 1.2em;
+    }
+
+    /* Aquí nada más moficiamos el font de las imágenes (vectores). */
+    #collapsable-nav a span {
+        font-size: 1em;
+        margin-right: 5px;
+    }
+
 }
