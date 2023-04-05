@@ -244,3 +244,27 @@ body{
       }
 
 }
+
+/*
+    Se hizo probando en dispositivos más pequeños como el
+    iphone 4, usando developer tools de Brave.
+*/
+
+/**** SUPER EXTRA SMALL DEVICES ONLY ****/
+@media (max-width: 479px){
+
+    /* Header. */
+    .navbar-brand h1 {
+        padding-top: 5px;
+        font-size: 6vw;
+    }
+    /* End header. */
+
+
+    /* Home page. */
+    #menu-tile, #specials-tile {
+        width: 280px;
+        margin: 0 auto 15px;
+    }
+    /* End home page. */
+}
