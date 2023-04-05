@@ -145,6 +145,54 @@ body{
 }
 
 
+/* FOOTER */
+.panel-footer {
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #222;
+    border-top: 0;
+}
+
+.panel-footer div.row {
+    margin-bottom: 35px;
+}
+
+/* Especiado entre lineas. Similar a Word. */
+#hours, #address {
+    line-height: 2;
+}
+
+/* > es para los hijos directos. Se puede poner también como
+#hours span, address span. 
+
+Si hubieran más descendientes, podríamos usar también:
+#hours > .inner-container > p.
+*/
+#hours > span, #address > span {
+    font-size: 1.3em;
+}
+
+#address p {
+    color: #557c3e;
+    font-size: .8em;
+    line-height: 1.8;
+}
+
+#testimonials {
+    font-style: italic;
+}
+
+/* El segundo child (segundo p)*/
+#testimonials p:nth-child(2){
+    margin-top: 25px;
+}
+
+/* END FOOTER */
+
+
+
+
 /*Son las mismas medidas de Bootstrap.*/
 
 /**** LARGE DEVICES ONLY ****/
@@ -243,6 +291,24 @@ body{
         margin: 0 auto 15px;
       }
 
+      /* FOOTER */
+      .panel-footer section {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      /* No es necesario 30px de margin-bottom al final.
+        Esos 30px fueron los agregados arriba de esto.*/
+      .panel-footer section:nth-child(3) {
+        margin-bottom: 0;
+      }
+
+      .panel-footer section hr {
+        width: 50%;
+      }
+
+      /* END FOOTER */
+
 }
 
 /*
@@ -267,10 +333,5 @@ body{
         margin: 0 auto 15px;
     }
     /* End home page. */
-}
-
-footer {
-    background-color: blue;
-    color: black;
 }
 
