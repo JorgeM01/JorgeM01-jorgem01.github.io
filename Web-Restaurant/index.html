@@ -20,145 +20,184 @@
       rel="stylesheet"
     />
   </head>
-  <header>
-    <!--La clase que puse en nav es de bootstrap.
+  <body>
+    <header>
+      <!--La clase que puse en nav es de bootstrap.
         Aquí se puso la base class "navbar" y la subclass
         "navbar-default. Es algo que se suele hacer en
         bootstrap."-->
-    <nav id="header-nav" class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <!--De esta forma, al darle click al logo irá a index.html.-->
-          <!--pull-left es de bootstrap y sería como un float-left.-->
-          <!--Los visible es para que lo que haya ahí, solo sea visible en este caso en md y lg.-->
-          <a href="index.html" class="pull-left visible-md visible-lg">
-            <div id="logo-img" alt="Logo image"></div>
-          </a>
+      <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <!--De esta forma, al darle click al logo irá a index.html.-->
+            <!--pull-left es de bootstrap y sería como un float-left.-->
+            <!--Los visible es para que lo que haya ahí, solo sea visible en este caso en md y lg.-->
+            <a href="index.html" class="pull-left visible-md visible-lg">
+              <div id="logo-img" alt="Logo image"></div>
+            </a>
 
-          <div class="navbar-brand">
-            <a href="index.html"><h1>David Chu's China Bistro</h1></a>
-            <p>
-              <!--No nos preocupamos por responsive en esta imagen porque es pequeña.-->
-              <img src="images/star-k-logo.png" alt="Kosher certification" />
-              <span>Kosher Certified</span>
-            </p>
+            <div class="navbar-brand">
+              <a href="index.html"><h1>David Chu's China Bistro</h1></a>
+              <p>
+                <!--No nos preocupamos por responsive en esta imagen porque es pequeña.-->
+                <img src="images/star-k-logo.png" alt="Kosher certification" />
+                <span>Kosher Certified</span>
+              </p>
+            </div>
+            <!--Para el menú. Sacado de la documentación de Bootstrap.-->
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#collapsable-nav"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
           </div>
-          <!--Para el menú. Sacado de la documentación de Bootstrap.-->
-          <button
-            type="button"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#collapsable-nav"
-            aria-expanded="false"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+
+          <div id="collapsable-nav" class="collapse navbar-collapse">
+            <ul id="nav-list" class="nav navbar-nav navbar-right">
+              <li>
+                <a href="menu-categories.html">
+                  <span class="glyphicon glyphicon-cutlery"> </span>
+                  <br class="hidden-xs" />
+                  Menu
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="glyphicon glyphicon-info-sign"></span>
+                  <br class="hidden-xs" />
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="glyphicon glyphicon-certificate"> </span>
+                  <br class="hidden-xs" />
+                  Awards
+                </a>
+              </li>
+              <li id="phone" class="hidden-xs">
+                <a h ref="tel: 410-602-5008">
+                  <span>410-602-5008</span>
+                </a>
+                <div>* We Deliver</div>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+    </header>
 
-        <div id="collapsable-nav" class="collapse navbar-collapse">
-          <ul id="nav-list" class="nav navbar-nav navbar-right">
-            <li>
-              <a href="menu-categories.html">
-                <span class="glyphicon glyphicon-cutlery"> </span>
-                <br class="hidden-xs" />
-                Menu
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="glyphicon glyphicon-info-sign"></span>
-                <br class="hidden-xs" />
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="glyphicon glyphicon-certificate"> </span>
-                <br class="hidden-xs" />
-                Awards
-              </a>
-            </li>
-            <li id="phone" class="hidden-xs">
-              <a h ref="tel: 410-602-5008">
-                <span>410-602-5008</span>
-              </a>
-              <div>* We Deliver</div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+    <!-- Aquí va el teléfono para dispositivos pequeños. -->
+    <div id="call-btn" class="visible-xs">
+      <a class="btn" href="tel:410-602-5008">
+        <span class="glyphicon glyphicon-earphone"></span>
+        410-602-5008
+      </a>
+    </div>
+    <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
 
-  <!-- Aquí va el teléfono para dispositivos pequeños. -->
-  <div id="call-btn" class="visible-xs">
-    <a class="btn" href="tel:410-602-5008">
-      <span class="glyphicon glyphicon-earphone"></span>
-      410-602-5008
-    </a>
-  </div>
-  <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
-
-  <!-- Contenido principal de la página. -->
-  <!-- Every Bootstrap grid has to be inside of a container 
+    <!-- Contenido principal de la página. -->
+    <!-- Every Bootstrap grid has to be inside of a container 
     or element that is marked with a cointainer class. -->
-  <div id="main-content" class="container">
-    <!-- jumbotron es la imagen de encabezado o principal. -->
-    <div class="jumbotron">
-      <!-- "img-responsive indica que según cambiemos el size, la imagen cambiará proporcionalmente."-->
-      <!-- Eso no se puede lograr muy bien con un background image nada más. -->
-      <!-- Se hace así porque si ponemos directamente la imagen en el CSS en 
+    <div id="main-content" class="container">
+      <!-- jumbotron es la imagen de encabezado o principal. -->
+      <div class="jumbotron">
+        <!-- "img-responsive indica que según cambiemos el size, la imagen cambiará proporcionalmente."-->
+        <!-- Eso no se puede lograr muy bien con un background image nada más. -->
+        <!-- Se hace así porque si ponemos directamente la imagen en el CSS en 
         small devices, no se puede porque con jumbotron la imagen no es responsiva, pero
         de esta forma de aquí nos aseguramos de que lo sea.-->
-      <img
-        src="images/jumbotron_768.jpg"
-        alt="Picture of restaurant"
-        class="img-responsive visible-xs"
-      />
+        <img
+          src="images/jumbotron_768.jpg"
+          alt="Picture of restaurant"
+          class="img-responsive visible-xs"
+        />
+      </div>
+
+      <div id="home-tile" class="row">
+        <!-- col-md-4 recordar que es entre 12, o sea que tenemos 12/4 = 3. En 3 se dividirá el grid. -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <a href="menu-categories.html">
+            <div id="menu-tile">
+              <span> menu </span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <a href="single-category.html">
+            <div id="specials-tile">
+              <span>speciales</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <!-- El _blank es para que abra otra al darle click al link pestaña. No queremos que deje nuestro sitio web. -->
+          <a href="https://goo.gl/maps/WLK7JoYtuURxZapF8" target="_blank">
+            <div id="map-tile">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1922.2846358722425!2d-87.98370778165066!3d15.507592430983566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2shn!4v1680673305419!5m2!1ses-419!2shn"
+                width="100%"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <span> map </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- End of the #home-tiles. -->
     </div>
+    <!-- End of #main-content. -->
 
-    <div id="home-tile" class="row">
-      <!-- col-md-4 recordar que es entre 12, o sea que tenemos 12/4 = 3. En 3 se dividirá el grid. -->
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <a href="menu-categories.html">
-          <div id="menu-tile">
-            <span> menu </span>
-          </div>
-        </a>
+    <!-- FOOTER. -->
+    <!-- La clase "panel-footer" sería como el equivalente a navbar. -->
+    <footer class="panel-footer">
+      <div class="container">
+        <div class="row">
+          <section id="hours" class="col-sm-4">
+            <span>Hours: </span><br />
+            Sun-Thurs: 11:15 a. m. - 10:00 p. m. <br />
+            Fri: 11:15 a. m. - 2:30 p. m.<br />
+            Saturday: Closed.
+            <hr class="visible-xs" />
+          </section>
+          <section id="address" class="col-sm-4">
+            <span>Address:</span><br />
+            7105 Reisterstown Road <br />
+            Baltimore, MD 21215
+            <p>
+              * Delivery area within 3-4 miles, with minimum order of $20 plus
+              $3 charge or all deliveries.
+            </p>
+            <hr class="visible-xs" />
+          </section>
+          <section id="testimonials" class="col-sm-4">
+            <p>
+              "The best Chinese restaurant I've been to! And that's saying a
+              alot, since I've been to many!"
+            </p>
+            <p>
+              "Amazing food! Great service! Couldn't ask for more! I'll be back
+              again and again!"
+            </p>
+          </section>
+        </div>
+        <div class="text-center">&copy; Copyright Jorge Matute 2023</div>
       </div>
+    </footer>
 
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <a href="single-category.html">
-          <div id="specials-tile">
-            <span>speciales</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-4 col-sm-12 col-xs-12">
-        <!-- El _blank es para que abra otra al darle click al link pestaña. No queremos que deje nuestro sitio web. -->
-        <a href="https://goo.gl/maps/WLK7JoYtuURxZapF8" target="_blank">
-          <div id="map-tile">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1922.2846358722425!2d-87.98370778165066!3d15.507592430983566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2shn!4v1680673305419!5m2!1ses-419!2shn"
-              width="100%"
-              height="250"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-            <span> map </span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <body>
     <!-- jQuery (Bootstrap JS plugins depend on it) -->
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

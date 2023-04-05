@@ -268,3 +268,9 @@ body{
     }
     /* End home page. */
 }
+
+footer {
+    background-color: blue;
+    color: black;
+}
+
