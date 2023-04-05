@@ -103,6 +103,8 @@
   <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
 
   <!-- Contenido principal de la página. -->
+  <!-- Every Bootstrap grid has to be inside of a container 
+    or element that is marked with a cointainer class. -->
   <div id="main-content" class="container">
     <!-- jumbotron es la imagen de encabezado o principal. -->
     <div class="jumbotron">
@@ -116,6 +118,47 @@
         alt="Picture of restaurant"
         class="img-responsive visible-xs"
       />
+    </div>
+
+    <div id="home-tile" class="row">
+      <!-- col-md-4 recordar que es entre 12, o sea que tenemos 12/4 = 3. En 3 se dividirá el grid. -->
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="menu-categories.html">
+          <div id="menu-tile">
+            <span> menu </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="single-category.html">
+          <div id="specials-tile">
+            <span>speciales</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <!-- El _blank es para que abra otra al darle click al link pestaña. No queremos que deje nuestro sitio web. -->
+        <a
+          href="https://www.google.com/maps/place/David+Chu's+China+Bistro/@39.3635874,-76.7138622,17z/data=!4m6!1m3!3m2!1s0x89c81a14e7817803:0xab20a0e99daa17ea!2sDavid+Chu's+China+Bistro!3m1!1s0x89c81a14e7817803:0xab20a0e99daa17ea"
+          target="_blank"
+        >
+          <div id="map-tile">
+            <!--
+            <iframe
+              src="https://www.google.com/maps/place/David+Chu's+China+Bistro/@39.3635874,-76.7138622,17z/data=!4m6!1m3!3m2!1s0x89c81a14e7817803:0xab20a0e99daa17ea!2sDavid+Chu's+China+Bistro!3m1!1s0x89c81a14e7817803:0xab20a0e99daa17ea"
+              width="100%"
+              height="250"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen
+            ></iframe>
+            -->
+            <span> map </span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 
