@@ -120,6 +120,31 @@ body{
     box-shadow: 0 1px 5px 1px #cccccc;
 }
 
+#menu-tile {
+    background: url('../images/menu-tile.jpg') no-repeat;
+    background-position: center;
+}
+
+#specials-tile {
+    background: url('../images/specials-tile.jpg') no-repeat;
+    background-position: center;
+}
+
+#menu-tile span, #specials-tile span, #map-tile span {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    /* Sería el 80% de opacidad. 1 representa el 100%, o sea sin opacidad.*/
+    opacity: .8;
+}
+
+
 /*Son las mismas medidas de Bootstrap.*/
 
 /**** LARGE DEVICES ONLY ****/
@@ -208,6 +233,14 @@ body{
       .container .jumbotron {
         margin-top: 30px;
         padding: 0;
+      }
+
+      /* La imagen es 360 x 250. */
+      #menu-tile, #specials-tile {
+        width: 360px;
+        /* 0 auto -> centra horizontalmente.
+            15px sería los px en top y bottom.*/
+        margin: 0 auto 15px;
       }
 
 }
