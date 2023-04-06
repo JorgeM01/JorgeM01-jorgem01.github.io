@@ -191,8 +191,66 @@ body{
 #menu-categories-tile + div{
     margin-bottom: 50px;
 }
-
 /* END MENU MAIN CONTENT */
+
+/* SINGLE MENU CATEGORY - MAIN CONTENT*/
+.menu-item-tile {
+    margin-bottom: 25px;
+}
+
+.menu-item-tile hr {
+    width: 80%;
+}
+
+.menu-item-tile .menu-item-price {
+    font-size: 1.1em;
+    text-align: right;
+    margin-right: -15px;
+    margin-top: -15px;
+}
+
+.menu-item-tile .menu-item-price span {
+    font-size: .6em;
+}
+
+.menu-item-photo {
+    position: relative;
+    border: 2px solid #3F0C1F;
+    overflow: hidden;
+    padding: 0;
+    margin-right: -15px;
+    margin-left: auto;
+    margin-bottom: 20px;
+    /* No queremos que sea más grande la imagen porque como
+    sólo estamos usando un tamaño, no conviene en este caso por
+    los pixeles que se pueden distorsionar. */
+    max-width: 250px;
+}
+
+.menu-item-photo div {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    background-color: #557c3e;
+    text-align: center;
+}
+
+.menu-item-description {
+    padding-right: 30px;
+}
+
+h3.menu-item-title {
+    /*top 0, right 0, 10 buttom, 0 left*/
+    margin: 0 0 10px;
+}
+
+.menu-item-details {
+    font-size: .9em;
+    font-style: italic;
+}
+/* END SINGLE MENU CATEGORY - MAIN CONTENT*/
+
 
 /* FOOTER */
 .panel-footer {
@@ -317,34 +375,53 @@ Si hubieran más descendientes, podríamos usar también:
         border: 2px solid #fff;
         background-color: #f6b319;
         color: #951c49;
-      }
-      #xs-deliver {
+    }
+    #xs-deliver {
         margin-top: 5px;
         font-size: .7em;
         letter-spacing: .1em;
         text-transform: uppercase;
-      }
-      /* End header. */
+    }
+    /* End header. */
 
-      /* Main content. */
-      .container .jumbotron {
+    /* Main content. */
+    .container .jumbotron {
         margin-top: 30px;
         padding: 0;
-      }
+    }
 
-      /* La imagen es 360 x 250. */
-      #menu-tile, #specials-tile {
+    /* La imagen es 360 x 250. */
+    #menu-tile, #specials-tile {
         width: 360px;
         /* 0 auto -> centra horizontalmente.
             15px sería los px en top y bottom.*/
         margin: 0 auto 15px;
-      }
+    }
+    /* End Main content*/
 
-      /* FOOTER */
-      .panel-footer section {
+    /* SINGLE-CATEGORY MAIN CONTENT */
+    .menu-item-photo {
+        margin-right: auto;
+    }
+
+    /* Mientras más especifiquemos, parece que mejor. Por eso no solamente
+     .menu-item-price.*/
+    .menu-item-tile .menu-item-price {
+        text-align: center;
+    }
+
+    .menu-item-description {
+        text-align: center;
+    }
+
+    /* SINGLE-CATEGORY MAIN CONTENT */
+
+
+    /* FOOTER */
+    .panel-footer section {
         margin-bottom: 30px;
         text-align: center;
-      }
+    }
 
       /* No es necesario 30px de margin-bottom al final.
         Esos 30px fueron los agregados arriba de esto.*/
