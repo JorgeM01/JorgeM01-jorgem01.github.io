@@ -168,6 +168,29 @@ body{
     opacity: .8;
 }
 
+.category-tile:hover {
+    box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+/*
+    En CSS, el símbolo "+" se utiliza como selector de hermanos adyacentes. 
+    En el ejemplo proporcionado, el selector se utiliza para aplicar un margen
+    inferior de 50px al elemento "div" que sigue inmediatamente después del elemento 
+    con el identificador "menu-categories-tile". Es decir, el estilo se aplicará solo al 
+    primer elemento "div" que sigue al elemento con el identificador "menu-categories-tile".
+
+    Por lo tanto, en el código CSS proporcionado, se está seleccionando un elemento "div"
+    que es un hermano adyacente al elemento con el identificador "menu-categories-tile" y
+    se está aplicando un margen inferior de 50px a ese elemento "div". Esto se utiliza 
+    comúnmente para agregar espacio entre elementos adyacentes en una página web.
+
+    Básicamente solo se le aplica al primero que está luego del elemento. En este caso
+    al primer div.
+    Recordar que tiene que ver con los siblings.
+*/
+#menu-categories-tile + div{
+    margin-bottom: 50px;
+}
 
 /* END MENU MAIN CONTENT */
 
