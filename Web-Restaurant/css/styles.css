@@ -381,6 +381,26 @@ Si hubieran más descendientes, podríamos usar también:
         width: 280px;
         margin: 0 auto 15px;
     }
+
+    /* Para que sea solo una column. 
+    
+        Creamos una nueva clase basándonos
+        en col-xs-12 de Bootstrap.
+    */
+    .col-xxs-12 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .col-xxs-12{
+        float: left;
+    }
+
+    .col-xxs-12 {
+        width: 100%;
+    }
+
     /* End home page. */
 }
 
