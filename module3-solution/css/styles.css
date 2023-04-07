@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    /*padding: 0;*/
+    /*margin: 0;*/
+  }
+
+body {
+  background-color: bisque;
+}
+
+  /** HEADER **/
+
+  /* HEADER */
+#header-nav{
+  background-color: coral;
+  border-radius: 0;
+  border: 0;
+  font-weight: bold;
+}
+
+.navbar-brand h1 {
+    margin-top: -5px;
+    color: black;
+    font-family: sans-serif;
+    font-size: 1.6em;
+    text-shadow: 1px 1px 1px #222;
+    font-weight: bold;
+}
+
+#nav-list a:hover {
+  background-color: white;
+}
+
+#nav-list {
+  margin-top: 10px;
+}
+
+#nav-list a {
+  color: black;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.8em;
+  background-color: coral;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #61111f;
+}
+
+  /** END HEADER **/
+
+  #main-title {
+    text-align: center;
+  }
+
+  #main-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    /*background-color: blue;*/
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 1px #222;
+  }
+
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border: 2px solid black;
+    padding: 40px;
+    padding-top: 11%;
+    background-color: gray;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .titles{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21;
+    width:40%; 
+    border: 2px solid black; 
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    position: absolute;
+    text-align: center;
+    top: -20px; /*-10%*/
+    right: 10%;
+  }
+
+  .title1{
+    background-color: pink;
+  }
+
+  .title2 {
+    background-color: rgb(185, 56, 56);
+    color:white;
+  }
+
+  .title3{
+    background-color: rgb(208, 231, 154);
+  }
+
+  /* Simple Responsive Framework. */
+  .row {
+    width: 100%;
+  }
+
+  .col-sm-12.edit p{
+      padding-top: 45px;
+  }
+  
+  section{
+    position: relative;
+    /*background-color: blue;*/
+  }

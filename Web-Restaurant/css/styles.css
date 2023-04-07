@@ -36,7 +36,7 @@ body{
 }
 
 /*Así se quita la línea subrayada del link.*/
-.navbar-brand a:hover, .navbar-brand-brand a:focus {
+.navbar-brand a:hover, .navbar-brand a:focus {
     text-decoration: none;
 }
 
@@ -63,7 +63,7 @@ body{
 }
 
 #nav-list a:hover {
-    background: #E7E7E7;
+    background-color: #E7E7E7;
 }
 
 #nav-list a span {
