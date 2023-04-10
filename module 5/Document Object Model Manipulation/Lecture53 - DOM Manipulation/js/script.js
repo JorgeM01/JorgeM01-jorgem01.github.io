@@ -15,15 +15,15 @@ function sayHello() {
   //document.getElementById("content").textContent = message;
 
   //! De esta otra forma lo toma como código de html. Podemos incluir tags.
-  document.getElementById("content").innerHTML = message;
+  //document.getElementById("content").innerHTML = message;
 
   //* Agregándole más cosas:
-  if (name.toLowerCase() === "Jordan Omar Matute Lopez".toLowerCase()) {
+  if (name.toLowerCase() === "Jennipher".toLowerCase()) {
     var title =
       //! Esta es una mejor forma que el getElementById porque lo restringe a
       //! solo poder seleccionar por id. Entonces esta otra forma es más genérica.
       document.querySelector("#title").textContent; // Es como cuando se seleecionan varios divs a la vez en css y así.
-    title += " esto le agregué al texto.";
+    title = "Jorge es mejor que Mark Zuckerberg.";
 
     //! Así se actualiza porque sería como modificarlo por referencia al título.
     // Ojo: con esta function toma el primer elemento, en este caso al primer h1.
