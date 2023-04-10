@@ -23,7 +23,7 @@ function sayHello() {
       //! Esta es una mejor forma que el getElementById porque lo restringe a
       //! solo poder seleccionar por id. Entonces esta otra forma es más genérica.
       document.querySelector("#title").textContent; // Es como cuando se seleecionan varios divs a la vez en css y así.
-    title = "Jorge es mejor que Mark Zuckerberg.";
+    title = "Jorge es el nuevo Mark Zuckerberg.";
 
     //! Así se actualiza porque sería como modificarlo por referencia al título.
     // Ojo: con esta function toma el primer elemento, en este caso al primer h1.
