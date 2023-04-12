@@ -114,59 +114,7 @@
     <!-- Contenido principal de la página. -->
     <!-- Every Bootstrap grid has to be inside of a container 
     or element that is marked with a cointainer class. -->
-    <div id="main-content" class="container">
-      <!-- jumbotron es la imagen de encabezado o principal. -->
-      <div class="jumbotron">
-        <!-- "img-responsive indica que según cambiemos el size, la imagen cambiará proporcionalmente."-->
-        <!-- Eso no se puede lograr muy bien con un background image nada más. -->
-        <!-- Se hace así porque si ponemos directamente la imagen en el CSS en 
-        small devices, no se puede porque con jumbotron la imagen no es responsiva, pero
-        de esta forma de aquí nos aseguramos de que lo sea.-->
-        <img
-          src="images/jumbotron_768.jpg"
-          alt="Picture of restaurant"
-          class="img-responsive visible-xs"
-        />
-      </div>
-
-      <div id="home-tile" class="row">
-        <!-- col-md-4 recordar que es entre 12, o sea que tenemos 12/4 = 3. En 3 se dividirá el grid. -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <a href="menu-categories.html">
-            <div id="menu-tile">
-              <span> menu </span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <a href="single-category.html">
-            <div id="specials-tile">
-              <span>speciales</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-4 col-sm-12 col-xs-12">
-          <!-- El _blank es para que abra otra al darle click al link pestaña. No queremos que deje nuestro sitio web. -->
-          <a href="https://goo.gl/maps/WLK7JoYtuURxZapF8" target="_blank">
-            <div id="map-tile">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1922.2846358722425!2d-87.98370778165066!3d15.507592430983566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2shn!4v1680673305419!5m2!1ses-419!2shn"
-                width="100%"
-                height="250"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-              <span> map </span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- End of the #home-tiles. -->
-    </div>
+    <div id="main-content" class="container"></div>
     <!-- End of #main-content. -->
 
     <!-- FOOTER. -->
