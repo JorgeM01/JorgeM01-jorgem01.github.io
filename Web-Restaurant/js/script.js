@@ -59,5 +59,5 @@ $(function () {
     );
   });
 
-  globall.$dc = dc;
+  global.$dc = dc;
 })(window);
