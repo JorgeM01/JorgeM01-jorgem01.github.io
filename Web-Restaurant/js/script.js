@@ -42,6 +42,22 @@ $(function () {
   var menuItemsTitleHTML = "snippets/menu-items-title.html";
   var menuItemHTML = "snippets/menu-item.html";
 
+  // Remove the class 'active' from home and switch to Menu button.
+  var switchMenuToActive = function () {
+    // Remove 'active' from home button.
+    var classes = document.querySelector("#navHomeButton").className;
+    classes = classes.replace(new RegExp("active", "g"), "");
+    document.querySelector("#navHomeButton").className = classes;
+
+    // Add 'active' to menu button if not already there.
+    //! indexOf retorna -1 en caso de no encontrar a la clase que le pasemos.
+    classes = document.querySelector("#navMenuButton").className;
+    if (classes.indexOf("active") == -1) {
+      classes += " active";
+      document.querySelector("#navMenuButton").className = classes;
+    }
+  };
+
   // Convinience function for inserting innerHTML for 'select'.
   var insertHtml = function (selector, html) {
     var targetElement = document.querySelector(selector);
@@ -85,6 +101,7 @@ $(function () {
 
   // Load the categories.
   dc.loadMenuCategories = function () {
+    switchMenuToActive();
     // Mientras cargan los recursos en caso de que sea lento, se mostrará el loading gif.
     showLoading("#main-content");
     //! No se le pasó ni true ni false porque por defecto es jason ya que vamos a sacar los elementos del link externo de la API.
@@ -96,6 +113,7 @@ $(function () {
   //! Recordar que ese append con .json es porque el link de la API cambió.
   //! Lo que iría en categoryShort sería el shortname que se pasó en el category-snippet.
   dc.loadMenuItems = function (categoryShort) {
+    switchMenuToActive();
     showLoading("#main-content");
     //!console.log(menuItemsURL + categoryShort + ".json"); // PROBANDO.
     $ajaxUtils.sendGetRequest(
