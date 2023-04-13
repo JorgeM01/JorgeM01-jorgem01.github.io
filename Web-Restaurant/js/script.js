@@ -80,24 +80,32 @@ $(function () {
   });
 
   dc.loadMenuCategories = function () {
+    // Mientras cargan los recursos en caso de que sea lento, se mostrará el loading gif.
     showLoading("#main-content");
-    //! No se le pasó ni true ni false porque por defecto es jason.
+    //! No se le pasó ni true ni false porque por defecto es jason ya que vamos a sacar los elementos del link externo de la API.
     $ajaxUtils.sendGetRequest(allCategoriesURL, buildAndShowCategoriesHTML);
   };
 
+  // Categories sería "responseHandler(JSON.parse(request.responseText));". O sea lo del argumento. Eso es del ajax.
+  // Es similar a lo que ya había hecho antes. Aquí nada más se da por hecho que categories es ese parámetro que se definió antes.
   function buildAndShowCategoriesHTML(categories) {
     // Load title snippet of categories page.
+    //! Si no me equivoco se hace mejor una dentro de la otra porque estamos trabajando con ajax y es asincrónico.
     $ajaxUtils.sendGetRequest(
       categoriesTitleHTML,
-      function (categoriesTitleHTML) {
+      function (categoriesTitle) {
+        //! OJO: este categoriesTitleHTML aquí adentro sería otra cosa. Creo que era mejor si se cambiaba un poco el nombre.
+        //! Mejor le cambié el nombre para poder diferencialos bien. Cualquier cosa revisar el source code.
+        //! También modifiqué lo de categoryHTML. Uno con '_' y otro sin. Así los diferencio mejor.
         // Retrieve single category snippet.
         $ajaxUtils.sendGetRequest(
           categoryHTML,
-          function (categoryHTML) {
+          function (category_HTML) {
+            //* Una vez tenemos todos los elementos, ya podemos empezar a unir cada cosa del html.
             var categoriesViewHTML = buildCategoriesViewHTML(
               categories,
-              categoriesTitleHTML,
-              categoryHTML
+              categoriesTitle,
+              category_HTML
             );
             insertHtml("#main-content", categoriesViewHTML);
           },
