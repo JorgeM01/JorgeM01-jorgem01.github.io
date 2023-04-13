@@ -94,7 +94,7 @@ $(function () {
   // Load the menu items view.
   // @categoryShort -> sería lo del append a la url como += "A.json".
   //! Recordar que ese append con .json es porque el link de la API cambió.
-  //! Lo que iría en categoryShort sería el shortname.
+  //! Lo que iría en categoryShort sería el shortname que se pasó en el category-snippet.
   dc.loadMenuItems = function (categoryShort) {
     showLoading("#main-content");
     //!console.log(menuItemsURL + categoryShort + ".json"); // PROBANDO.
