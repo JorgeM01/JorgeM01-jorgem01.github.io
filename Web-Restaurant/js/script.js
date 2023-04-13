@@ -37,6 +37,10 @@ $(function () {
     "https://coursera-jhu-default-rtdb.firebaseio.com/categories.json";
   var categoriesTitleHTML = "snippets/categories-title-snippet.html";
   var categoryHTML = "snippets/category-snippet.html";
+  var menuItemsURL =
+    "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/"; //! Hay que hacer un append. Por ejemplo "+= A.json".
+  var menuItemsTitleHTML = "snippets/menu-items-title.html";
+  var menuItemHTML = "snippets/menu-item.html";
 
   // Convinience function for inserting innerHTML for 'select'.
   var insertHtml = function (selector, html) {
@@ -79,11 +83,25 @@ $(function () {
     );
   });
 
+  // Load the categories.
   dc.loadMenuCategories = function () {
     // Mientras cargan los recursos en caso de que sea lento, se mostrará el loading gif.
     showLoading("#main-content");
     //! No se le pasó ni true ni false porque por defecto es jason ya que vamos a sacar los elementos del link externo de la API.
     $ajaxUtils.sendGetRequest(allCategoriesURL, buildAndShowCategoriesHTML);
+  };
+
+  // Load the menu items view.
+  // @categoryShort -> sería lo del append a la url como += "A.json".
+  //! Recordar que ese append con .json es porque el link de la API cambió.
+  //! Lo que iría en categoryShort sería el shortname.
+  dc.loadMenuItems = function (categoryShort) {
+    showLoading("#main-content");
+    //!console.log(menuItemsURL + categoryShort + ".json"); // PROBANDO.
+    $ajaxUtils.sendGetRequest(
+      menuItemsURL + categoryShort + ".json",
+      buildAndShowMenuItemsHTML
+    );
   };
 
   // Categories sería "responseHandler(JSON.parse(request.responseText));". O sea lo del argumento. Eso es del ajax.
@@ -139,6 +157,115 @@ $(function () {
 
     finalHTML += "</section>";
     return finalHTML;
+  }
+
+  function buildAndShowMenuItemsHTML(categoryMenuItems) {
+    // Load title snippet of menu items page.
+    $ajaxUtils.sendGetRequest(
+      menuItemsTitleHTML,
+      function (menuItemsTitle_HTML) {
+        //Retrive single menu item snippet.
+        $ajaxUtils.sendGetRequest(
+          menuItemHTML,
+          function (menuItem_HTML) {
+            //* Una vez tenemos todos los elementos, ya podemos empezar a unir cada cosa del html.
+            var menuItemsViewHTML = buildMenuItemsViewHTML(
+              categoryMenuItems,
+              menuItemsTitle_HTML,
+              menuItem_HTML
+            );
+            insertHtml("#main-content", menuItemsViewHTML);
+          },
+          false
+        );
+      },
+      false
+    );
+  }
+
+  // Build menu items view HTML to be inserted into page.
+  function buildMenuItemsViewHTML(
+    categoryMenuItems,
+    menuItemsTitleHTML,
+    menuItemHTML
+  ) {
+    menuItemsTitleHTML = insertProperty(
+      menuItemsTitleHTML,
+      "name",
+      categoryMenuItems.category.name
+    );
+    menuItemsTitleHTML = insertProperty(
+      menuItemsTitleHTML,
+      "special_instructions",
+      categoryMenuItems.category.special_instructions
+    );
+
+    var finalHTML = menuItemsTitleHTML;
+    finalHTML += "<section class='row'>";
+
+    // Loop over menu items.
+    var menuItems = categoryMenuItems.menu_items;
+    // Sería el código del producto, así como "A".
+    var catShortName = categoryMenuItems.category.short_name;
+    for (var i = 0; i < menuItems.length; i++) {
+      // Insert menu item values.
+      var html = menuItemHTML;
+      html = insertProperty(html, "short_name", menuItems[i].short_name);
+      html = insertProperty(html, "catShortName", catShortName);
+      html = insertItemPrice(html, "price_small", menuItems[i].price_small);
+      html = insertItemPortionName(
+        html,
+        "small_portion_name",
+        menuItems[i].small_portion_name
+      );
+      html = insertItemPrice(html, "price_large", menuItems[i].price_large);
+      html = insertItemPortionName(
+        html,
+        "large_portion_name",
+        menuItems[i].large_portion_name
+      );
+      html = insertProperty(html, "name", menuItems[i].name);
+      html = insertProperty(html, "description", menuItems[i].description);
+
+      // Recordemos que en este menú dividimos todo en 2 usando el clearfix. O sea que después de dos,
+      // se fueran para abajo, entonces usando esto se puede realizar eso. También se hubiera podido
+      // con un contador y muchas otras formas.
+      if (i % 2 != 0) {
+        html +=
+          "<div class='clearfix visible-md-block clearfix visible-lg-block'></div>";
+      }
+
+      finalHTML += html;
+    }
+    finalHTML += "</section>";
+    return finalHTML;
+  }
+
+  //! Son dos funciones diferentes y aparte porque a veces a lo mejor el item no tiene un precio
+  //! y no podemos dejarlo solo en blanco.
+  // Appends portion name in parens if it exists
+  function insertItemPortionName(html, portionPropName, portionValue) {
+    // If not specified, return original string
+    if (!portionValue) {
+      return insertProperty(html, portionPropName, "");
+    }
+
+    portionValue = "(" + portionValue + ")";
+    html = insertProperty(html, portionPropName, portionValue);
+    return html;
+  }
+
+  // Appends price with '$' if price exists.
+  function insertItemPrice(html, pricePropName, priceValue) {
+    // If not specified replace with empty string.
+    if (!priceValue) {
+      return insertProperty(html, pricePropName, "");
+    }
+
+    //* toFixed significa que se le agregan dos decimales.
+    priceValue = "$" + priceValue.toFixed(2);
+    html = insertProperty(html, pricePropName, priceValue);
+    return html;
   }
 
   global.$dc = dc;
